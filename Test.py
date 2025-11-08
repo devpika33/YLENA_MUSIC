@@ -15,7 +15,7 @@ from pyrogram.errors import RPCError
 
 from youtubesearchpython.__future__ import VideosSearch
 
-from ntgcalls import PyTgCalls as TgCalls
+from ntgcalls import TgCalls
 from ntgcalls.types import AudioStream
 
 from PIL import Image, ImageDraw
