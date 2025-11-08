@@ -159,7 +159,7 @@ async def make_thumb_with_user(thumb_url: str | None, req_user_id: int | None) -
 
 # ---------------- PLAYER ----------------
 async def join_and_stream(chat_id, link):
-    await vc.join_group_call(chat_id, AudioPiped(link))
+    await vc.join_group_call(chat_id, MediaStream(link))
     print(f"🎧 Streaming: {link}")
 
 async def play_next(chat_id):
