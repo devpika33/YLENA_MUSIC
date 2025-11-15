@@ -15,19 +15,19 @@ def help_pannel(_, START: Union[bool, int] = None):
     upl = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text=_["H_B_1"], callback_data="help_callback hb1"),
-                InlineKeyboardButton(text=_["H_B_3"], callback_data="help_callback hb3"),
-                InlineKeyboardButton(text=_["H_B_6"], callback_data="help_callback hb6"),
+                InlineKeyboardButton(text=_["H_B_1"], callback_data="help_hb1"),
+                InlineKeyboardButton(text=_["H_B_3"], callback_data="help_hb3"),
+                InlineKeyboardButton(text=_["H_B_6"], callback_data="help_hb6"),
             ],
             [
-                InlineKeyboardButton(text=_["H_B_7"], callback_data="help_callback hb7"),
-                InlineKeyboardButton(text=_["H_B_10"], callback_data="help_callback hb10"),
-                InlineKeyboardButton(text=_["H_B_11"], callback_data="help_callback hb11"),
+                InlineKeyboardButton(text=_["H_B_7"], callback_data="help_hb7"),
+                InlineKeyboardButton(text=_["H_B_10"], callback_data="help_hb10"),
+                InlineKeyboardButton(text=_["H_B_11"], callback_data="help_hb11"),
             ],
             [
-                InlineKeyboardButton(text=_["H_B_12"], callback_data="help_callback hb12"),
-                InlineKeyboardButton(text=_["H_B_13"], callback_data="help_callback hb13"),
-                InlineKeyboardButton(text=_["H_B_15"], callback_data="help_callback hb15"),
+                InlineKeyboardButton(text=_["H_B_12"], callback_data="help_hb12"),
+                InlineKeyboardButton(text=_["H_B_13"], callback_data="help_hb13"),
+                InlineKeyboardButton(text=_["H_B_15"], callback_data="help_hb15"),
             ],
             mark,
         ]
