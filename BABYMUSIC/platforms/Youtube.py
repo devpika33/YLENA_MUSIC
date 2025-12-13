@@ -87,12 +87,12 @@ async def download_video(link: str):
         if not res or not res.get("stream"):
             raise Exception("Video stream not found")
         stream_url = res["stream"]
-            _ fo  _ in ran:  90):
+        for _ in range(90):
             async with session.get(stream_url) as r:
                 if r.status == 200:
                     return stream_url
                 elif r.status == 202:
-                    await asyncio.sleep(2)
+                    await asyncio.sleep(3)
                 else:
                     raise Exception(f"Stream failed ({r.status})")
         raise Exception("Video processing timeout")
@@ -104,6 +104,7 @@ async def download_video(link: str):
             f"⚠️ `{e}`"
         )
         raise
+
 
 
 
