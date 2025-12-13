@@ -29,58 +29,35 @@ def cookie_txt_file():
     cookie_file = os.path.join(cookie_dir, random.choice(cookies_files))
     return cookie_file
 
+# ---------- AUDIO ----------
 async def download_song(link: str):
-    pattern = re.compile(
-        r"(?:https?://)?(?:www\.)?(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})"
-    )
-    match = pattern.search(link)
-    vidid = match.group(1) if match else link
-    file_path = os.path.join("downloads", f"{vidid}.mp3")
+    vid = link.split("v=")[-1].split("&")[0]
     os.makedirs("downloads", exist_ok=True)
-    if os.path.exists(file_path):
-        return file_path
+    for ext in ["mp3", "m4a", "webm"]:
+        path = f"downloads/{vid}.{ext}"
+        if os.path.exists(path):
+            return path
     loop = asyncio.get_running_loop()
-    def get_url():
-        try:
-            res = requests.get(f"{BASE_URL}/api/song?query={vidid}&api={API_KEY}").json()
-            return res
-        except Exception as e:
-            print(f"❌ API error: {e}")
-            return {}
-    response = await loop.run_in_executor(None, get_url)
-    if not response:
-        raise Exception("No response from API")
-    if "stream" in response:
-        stream_url = response["stream"]
-        return stream_url
-    raise Exception("Unable to access API 💁")
+    fetch = lambda: requests.get(f"{BASE_URL}/api/song?query={vid}&api={API_KEY}").json()
+    res = await loop.run_in_executor(None, fetch)
+    if not res:
+        raise Exception("API Error")
+    return res.get("stream") or Exception("No stream found")
 
-
+# ---------- VIDEO ----------
 async def download_video(link: str):
-    pattern = re.compile(
-        r"(?:https?://)?(?:www\.)?(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})"
-    )
-    match = pattern.search(link)
-    vidid = match.group(1) if match else link
-    file_path = os.path.join("downloads", f"{vidid}.mp4")
+    vid = link.split("v=")[-1].split("&")[0]
     os.makedirs("downloads", exist_ok=True)
-    if os.path.exists(file_path):
-        return file_path
+    for ext in ["mp4", "webm", "mkv"]:
+        path = f"downloads/{vid}.{ext}"
+        if os.path.exists(path):
+            return path
     loop = asyncio.get_running_loop()
-    def get_url():
-        try:
-            res = requests.get(f"{BASE_URL}/api/video?query={vidid}&api={API_KEY}").json()
-            return res
-        except Exception as e:
-            print(f"❌ API error: {e}")
-            return {}
-    response = await loop.run_in_executor(None, get_url)
-    if not response:
-        raise Exception("No response from API")
-    if "stream" in response:
-        stream_url = response["stream"]
-        return stream_url
-    raise Exception("Unable to access API 💁")
+    fetch = lambda: requests.get(f"{BASE_URL}/api/song?query={vid}&api={API_KEY}").json()
+    res = await loop.run_in_executor(None, fetch)
+    if not res:
+        raise Exception("API Error")
+    return res.get("stream") or Exception("No stream found")
 
 
 async def check_file_size(link):
