@@ -111,7 +111,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await Sagar.skip_stream(chat_id, link, video=status, image=image)
+            await BABY.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -145,7 +145,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await Sagar.skip_stream(chat_id, file_path, video=status, image=image)
+            await BABY.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
