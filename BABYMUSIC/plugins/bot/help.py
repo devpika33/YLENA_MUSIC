@@ -1,7 +1,3 @@
-# ULTRA FAST VERSION (Callback in 0.04–0.06 sec)
-# Uses ultra‑optimized callback_data format (h:1, h:3…)
-# Fastest possible performance on Telegram API.
-
 from typing import Union
 from pyrogram import filters, types, enums
 from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
@@ -15,9 +11,6 @@ from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
 from BABYMUSIC.utils.stuffs.helper import Helper
 
-############################################################
-# 1️⃣ ULTRA FAST DATA MAPPING (NO STRING PROCESSING IN RUNTIME)
-############################################################
 HELP_MAP = {
     "1": helpers.HELP_1,
     "3": helpers.HELP_3,
@@ -30,9 +23,6 @@ HELP_MAP = {
     "15": helpers.HELP_15,
 }
 
-############################################################
-# 2️⃣ PRIVATE HELP (Unchanged, but cleaned)
-############################################################
 @app.on_message(filters.command(["help"]) & filters.private & ~BANNED_USERS)
 @app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
 async def helper_private(client: app, update: Union[types.Message, types.CallbackQuery]):
@@ -69,20 +59,12 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
             reply_markup=keyboard,
         )
 
-############################################################
-# 3️⃣ GROUP HELP PANEL (Same)
-############################################################
 @app.on_message(filters.command(["help"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
     await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))
 
-############################################################
-# 4️⃣ ULTRA FAST CALLBACK SYSTEM
-# callback_data = "h:1"  → prefix=h, key=1
-# handler speed: 50ms total (max possible)
-############################################################
 @app.on_callback_query(filters.regex("^h:") & ~BANNED_USERS)
 @languageCB
 async def helper_cb(_, CallbackQuery, language):
@@ -102,10 +84,6 @@ async def helper_cb(_, CallbackQuery, language):
     )
 
 
-
-############################################################
-# 5️⃣ MANAGE BOT CALLBACK
-############################################################
 @app.on_callback_query(filters.regex('managebot123'))
 async def on_back_button(client, query):
     parts = query.data.split(None, 1)
@@ -124,9 +102,6 @@ async def on_back_button(client, query):
             _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
         )
 
-############################################################
-# 6️⃣ MPLUS CALLBACK
-############################################################
 @app.on_callback_query(filters.regex('mplus'))
 async def mb_plugin_button(client, query):
     parts = query.data.split(None, 1)
