@@ -14,10 +14,6 @@
 <a href="https://github.com/BABY-MUSIC/JAZZY/commits/BABY-MUSIC"> <img src="https://img.shields.io/github/last-commit/BABY-MUSIC/JAZZY?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
 </p>
 
-<p align="center">
-  <img src="">
-</p>
-
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=spotify-music&type=git&repository=BABY-MUSIC%2FSPOTIFY_MUSIC&branch=main&builder=dockerfile)
 
 
