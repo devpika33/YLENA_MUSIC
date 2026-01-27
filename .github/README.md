@@ -20,11 +20,12 @@
 ## 🚀 Deploy on Heroku 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/BABY-MUSIC/SPOTIFY_MUSIC)
 
----
+
 <details>
   <summary>### 🔧 Quick Setup</summary>
 <h1>bash run</h1>
 
+---
 
 1. **Upgrade & Update:**
    ```bash
@@ -74,9 +75,11 @@
 
 ---
 </details>
+
+
 ### 🛠 Commands & Usage
 
-The Aviax Music Bot offers a range of commands to enhance your music listening experience on Telegram:
+The Baby Music Bot offers a range of commands to enhance your music listening experience on Telegram:
 
 | Command                 | Description                                 |
 |-------------------------|---------------------------------------------|
