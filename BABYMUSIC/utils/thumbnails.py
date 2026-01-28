@@ -1,12 +1,5 @@
-# thumbnail.py
-# Always working YouTube thumbnail generator
-# Fast | Simple | No API | No Download | No PIL
-
-YOUTUBE_THUMB_BASE = "https://i.ytimg.com/vi"
+YOUTUBE_THUMB_BASE = "https://i.ytimg.com/vi_webp"
 
 async def get_thumb(videoid: str, chat_id=None):
-    """
-    Always returns a working YouTube thumbnail
-    Works for every public video
-    """
-    return f"{YOUTUBE_THUMB_BASE}/{videoid}/hqdefault.jpg"
+    return f"{YOUTUBE_THUMB_BASE}/{videoid}/maxresdefault.webp"
+
