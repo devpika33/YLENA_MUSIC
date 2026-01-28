@@ -28,7 +28,7 @@ from strings import get_string
 
 
 YUMI_PICS = [
-"https://files.catbox.moe/xhpqtp.jpg",
+"https://raw.githubusercontent.com/BABY-MUSIC/SPOTIFY_MUSIC/main/BABYMUSIC/assets/assets/public.jpg",
 
 ]
 
