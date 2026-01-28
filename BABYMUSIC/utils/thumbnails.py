@@ -1,2 +1,4 @@
-def get_thumb(videoid):
-    return f"https://i.ytimg.com/vi/{videoid}/mqdefault.jpg"
+from config import *
+
+def get_thumb(videoid, chat_id=None):
+    return f"{IQ_Proxy}/{videoid}/mqdefault.jpg"
