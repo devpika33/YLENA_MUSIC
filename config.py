@@ -12,7 +12,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", None)
 OWNER_USERNAME = getenv("OWNER_USERNAME","@HottyBacha")
 BOT_USERNAME = getenv("BOT_USERNAME" , "@imYlena_bot")
 BOT_NAME = getenv("BOT_NAME" , "╼⃝𖠁 𝐘ʟᴇɴᴀ ꭙ 𝐌ᴜsɪᴄ 𖠁⃝╾")
-ASSUSERNAME = getenv("ASSUSERNAME" , " @Eoxxxxxxy") 
+ASSUSERNAME = getenv("ASSUSERNAME" , "@Eoxxxxxxy") 
 # ---------------------------------------------------------
 API_URL = getenv("API_URL", "https://api.thequickearn.xyz")
 API_KEY = getenv("API_KEY",  "30DxNexGenBotsffec39")
