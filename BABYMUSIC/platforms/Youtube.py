@@ -18,7 +18,6 @@ import aiohttp
 from config import LOGGER_ID
 from BABYMUSIC import app
 import config
-from config import BASE_URL, API_KEY
 from urllib.parse import urlparse
 
 def cookie_txt_file():
