@@ -17,7 +17,7 @@ ASSUSERNAME = getenv("ASSUSERNAME" , "@Eoxxxxxxy")
 API_URL = getenv("API_URL", "https://api.thequickearn.xyz")
 API_KEY = getenv("API_KEY",  "30DxNexGenBotsffec39")
 # ---------------------------------------------------------
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://TEAMBABY01:UTTAMRATHORE09@cluster0.vmjl9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", mongodb+srv://b00756810_db_user:QqamrRbNqh3bQcHq@cluster0.7f8fy81.mongodb.net/musicbot?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 LOGGER_ID = int(getenv("LOGGER_ID", None))
 OWNER_ID = int(getenv("OWNER_ID", None))
